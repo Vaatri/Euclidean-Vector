@@ -177,6 +177,24 @@ b[2] = 3.0;</code></pre>
     <td>N/A</td>
   </tr>
   <tr>
+    <td>Unary plus</td>
+    <td><code>euclidean_vector operator+()</code></td>
+    <td>Returns a copy of the current object.</td>
+    <td><pre><code>+a</code></pre></td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Negation</td>
+    <td><code>euclidean_vector operator-()</code></td>
+    <td>Returns a copy of the current object, where each scalar value has its sign negated.</td>
+    <td>
+      <pre><code>auto const actual = comp6771::euclidean_vector{-6, 1};
+auto const expected = comp6771::euclidean_vector{6, -1};
+CHECK(expected == -actual);</code></pre>
+    </td>
+    <td>N/A</td>
+  </tr>
+  <tr>
     <td>Compound Addition</td>
     <td><code>euclidean_vector& operator+=(euclidean_vector const&)</code></td>
     <td>For adding vectors of the same dimension.</td>
