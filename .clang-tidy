@@ -24,6 +24,8 @@ CheckOptions:
     value: "_"
   - key: readability-identifier-naming.ConstantCase
     value: "lower_case"
+  - key: readability-identifier-naming.ConstantMemberCase
+    value: "lower_case"
   - key: readability-identifier-naming.ConstexprVariableCase
     value: "lower_case"
   - key: readability-identifier-naming.EnumCase
@@ -34,7 +36,13 @@ CheckOptions:
     value: "lower_case"
   - key: readability-identifier-naming.GlobalCase
     value: "lower_case"
+  - key: readability-identifier-naming.MacroDefinitionCase
+    value: "UPPER_CASE"
+  - key: readability-identifier-naming.MacroDefinitionPrefix
+    value: "COMP6771_"
   - key: readability-identifier-naming.MemberCase
+    value: "lower_case"
+  - key: readability-identifier-naming.MethodCase
     value: "lower_case"
   - key: readability-identifier-naming.NamespaceCase
     value: "lower_case"
@@ -44,7 +52,10 @@ CheckOptions:
     value: "_"
   - key: readability-identifier-naming.PrivateMethodCase
     value: "lower_case"
-  - key: readability-identifier-naming.PublicMember
+  - key: readability-identifier-naming.PublicMemberCase
+    value: "lower_case"
+  - key: readability-identifier-naming.PublicMethodCase
+    value: "lower_case"
   - key: readability-identifier-naming.TypeTemplateParameterCase
     value: "CamelCase"
   - key: readability-identifier-naming.TypeAliasCase
