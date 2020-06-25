@@ -10,20 +10,15 @@
 #include <range/v3/iterator.hpp>
 #include <span>
 #include <stdexcept>
+#include <string>
+#include <string_view>
 #include <vector>
 
 namespace comp6771 {
-	class euclidean_vector_error : public std::exception {
+	class euclidean_vector_error : public std::runtime_error {
 	public:
-		explicit euclidean_vector_error(std::string const& what)
-		: what_(what) {}
-
-		auto what() const noexcept -> char const* {
-			return what_.c_str();
-		}
-
-	private:
-		std::string what_;
+		explicit euclidean_vector_error(std::string const& what) noexcept
+		: std::runtime_error(what) {}
 	};
 
 	class euclidean_vector {

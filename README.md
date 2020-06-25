@@ -4,7 +4,7 @@
 
 ## Change Log
 
-* Items to be added soon
+* 26/06: Fixing up test stub
 
 ## The Task
 
@@ -383,7 +383,7 @@ auto a = b / c;</code></pre>
       <td><code>std::ostream& operator&lt;&lt;(std::ostream&, euclidean_vector const&)</code></td>
       <td>
         Prints out the magnitude in each dimension of the Euclidean vector (surrounded by
-        <code>[</code> and <code>]</code>), e.g. for a 3-dimensional vector: <code>[1 2 3]</code>.
+        <code>[</code> and <code>]</code>), e.g. for a 3-dimensional vector: <code>[1 2 3]</code>. Note: When printing the magnitude, simple use the double &lt;&lt; operator.
       </td>
       <td>
         <pre><code>std::cout &lt;&lt; a;
@@ -433,7 +433,6 @@ friendship if you can.
     </td>
   </tr>
   <tr>
-    <td>Dot product</td>
     <td>
       <code>auto dot(euclidean_vector const& x, euclidean_vector const& y) -&gt; double</code>
     </td>
@@ -554,7 +553,7 @@ $ git clone gitlab@gitlab.cse.unsw.edu.au:z5555555/20T2-cs6771-ass2
 
 (Note: Replace z5555555 with your zid)
 
-Navigate inside the directory. You can then open vscode with `code .` (not the dot).
+Navigate inside the directory. You can then open vscode with `code .` (note the dot).
 
 If you haven't done so already, clone the repository:</p>
 
