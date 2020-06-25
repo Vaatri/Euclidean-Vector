@@ -1,4 +1,5 @@
-#define CATCH_CONFIG_MAIN
+// We don't own this macro; don't prefix it with `COMP6771_`.
+#define CATCH_CONFIG_MAIN // NOLINT(readability-identifier-naming)
 #include "catch2/catch.hpp"
 
 // This file is designed to act as the program entry point. Everything is defined in catch.hpp, so
