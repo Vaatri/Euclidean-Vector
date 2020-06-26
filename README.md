@@ -5,6 +5,7 @@
 ## Change Log
 
 * 26/06: Fixing up test stub
+* 26/06: Moved euclidean norm comment to appropriate section, fixed up test case example in README.md
 
 ## The Task
 
@@ -287,15 +288,10 @@ auto lf = static_cast&lt;std::list&lt;double&gt;&gt;(a);
   <tr>
     <td><code>int dimensions()</code></td>
     <td>Return the number of dimensions in a particular euclidean_vector</td>
-    <td><pre><code>a.dimensions();</code></pre></td>
+    <td><code>a.dimensions();</code></td>
     <td>N/A</td>
   </tr>
 </table>
-
-The Euclidean norm should only be calculated when required and ideally should be cached if required
-again. We may run test cases on large vectors calculating the Euclidean norm many times. Hint:
-consider using a mutable data member where appropriate in conjunction with another data member to
-appropriate cache the euclidean norm. This is done for performance reasons.
 
 ### 5. Friends
 
@@ -451,6 +447,11 @@ friendship if you can.
   </tr>
 </table>
 
+The Euclidean norm should only be calculated when required and ideally should be cached if required
+again. We may run test cases on large vectors calculating the Euclidean norm many times. Hint:
+consider using a mutable data member where appropriate in conjunction with another data member to
+appropriate cache the euclidean norm. This is done for performance reasons.
+
 ### 7. Compulsory Data Members
 
 Your Euclidean vector is **required** to store the magnitudes of each dimension inside of a
@@ -529,15 +530,15 @@ Here is a sample and example of Catch2 tests to write
 ```cpp
 TEST_CASE("Creation of unit vectors") {
   SECTION("You have two identical vectors") {
-    auto a = comp6771::euclidean_vector{2};
+    auto a = comp6771::euclidean_vector(2);
     a[0] = 1;
     a[1] = 2;
-    auto b = comp6771::euclidean_vector{2};
+    auto b = comp6771::euclidean_vector(2);
     b[0] = 1;
     b[1] = 2;
 
-    auto c = a.unit();
-    auto d = b.unit();
+    auto c = comp6771::unit(a);
+    auto d = comp6771::unit(b);
     REQUIRE(c == d);
   }
 }
