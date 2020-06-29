@@ -6,6 +6,7 @@
 
 * 26/06: Fixing up test stub
 * 26/06: Moved euclidean norm comment to appropriate section, fixed up test case example in README.md
+* 29/06: Exception X and Y substitition clarified in throwing exceptions section
 
 ## The Task
 
@@ -481,7 +482,7 @@ have provided a `euclidean_vector` exception class for you to throw. You are wel
 exceptions if you feel they are more appropriate.
 
 **Note:** while the particular exception thrown does not matter, you are required to pass the
-strings specified in the tables above.
+strings specified in the tables above. In these strings, please use common sense to substitute values like X and Y for their actual numerical values
 
 ### 9. Other notes
 
