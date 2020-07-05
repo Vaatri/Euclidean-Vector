@@ -8,6 +8,7 @@
 * 26/06: Moved euclidean norm comment to appropriate section, fixed up test case example in README.md
 * 29/06: Exception X and Y substitition clarified in throwing exceptions section
 * 30/06: Added second exception for `comp6771::unit`
+* 05/07: Added exception string clarification for unit vector when euclidean norm is zero - check out exception string
 
 ## The Task
 
@@ -430,7 +431,7 @@ friendship if you can.
       <b>Throw</b>: "euclidean_vector with no dimensions does not have a unit vector"
       <hr />
       <b>When</b>: <code>v.euclidean_norm() == 0</code><br />
-      <b>Throw</b>: "euclidean_vector with no zero euclidean normal does not have a unit vector"
+      <b>Throw</b>: "euclidean_vector with zero euclidean normal does not have a unit vector"
     </td>
   </tr>
   <tr>
