@@ -6,6 +6,11 @@
 
 * 26/06: Fixing up test stub
 * 26/06: Moved euclidean norm comment to appropriate section, fixed up test case example in README.md
+* 29/06: Exception X and Y substitition clarified in throwing exceptions section
+* 30/06: Added second exception for `comp6771::unit`
+* 05/07: Added exception string clarification for unit vector when euclidean norm is zero - check out exception string
+* 07/07: Git submission instructions updated to be VERY clear to push your code to master branch before submitting
+* 07/07: Incorrect euclidean_norm pattern used
 
 ## The Task
 
@@ -426,6 +431,9 @@ friendship if you can.
     <td>
       <b>When</b>: <code>v.dimensions() == 0</code><br />
       <b>Throw</b>: "euclidean_vector with no dimensions does not have a unit vector"
+      <hr />
+      <b>When</b>: <code>comp6771::euclidean_norm(v) == 0</code><br />
+      <b>Throw</b>: "euclidean_vector with zero euclidean normal does not have a unit vector"
     </td>
   </tr>
   <tr>
@@ -481,7 +489,7 @@ have provided a `euclidean_vector` exception class for you to throw. You are wel
 exceptions if you feel they are more appropriate.
 
 **Note:** while the particular exception thrown does not matter, you are required to pass the
-strings specified in the tables above.
+strings specified in the tables above. In these strings, please use common sense to substitute values like X and Y for their actual numerical values
 
 ### 9. Other notes
 
@@ -688,6 +696,8 @@ Submit the assignment using the following comand while logged into the CSE machi
 
 This will submit whatever is on the master branch of THIS repository (the one this README.md file is
 contained in) at the moment of submission.
+
+**Please ensure that you commit and push your local code TO your gitlab repository (called the origin remote) before submitting, otherwise your code will not be submitted**
 
 Please ensure that you can build and run your tests successfully on the CSE machine.
 
