@@ -45,7 +45,7 @@ namespace comp6771 {
 		~euclidean_vector() noexcept;
 
 	private:
-		size_t dimension_;
+		int dimension_;
 		// NOLINTNEXTLINE(modernize-avoid-c-arrays)
 		std::unique_ptr<double[]> magnitude_;
 		mutable double mag_cache_;
@@ -56,22 +56,20 @@ namespace comp6771 {
 		auto operator=(euclidean_vector&&) noexcept -> euclidean_vector&;
 		auto operator[](int i) const noexcept -> double;
 		auto operator[](int i) noexcept -> double&;
-		auto operator+() noexcept -> euclidean_vector;
+		auto operator+() const noexcept -> euclidean_vector;
 		auto operator-() noexcept -> euclidean_vector;
 		auto operator+=(euclidean_vector const& vector) -> euclidean_vector&;
 		auto operator-=(euclidean_vector const& vector) -> euclidean_vector&;
 		auto operator*=(double const& mult) noexcept -> euclidean_vector&;
 		auto operator/=(double const& divisor) -> euclidean_vector&;
 		explicit operator std::vector<double>() const noexcept;
-		explicit operator std::list<double>() noexcept;
+		explicit operator std::list<double>() const noexcept;
 
 		// member functions
 		[[nodiscard]] auto at(int const& dimension) const -> double;
 		auto at(int const& dimension) -> double&;
 
 		[[nodiscard]] auto dimensions() const noexcept -> int;
-		[[nodiscard]] auto mag_cache() const -> double&;
-		auto set_cache(double&) const -> void;
 
 		[[nodiscard]] auto calculate_norm() const noexcept -> double;
 		[[nodiscard]] auto calculate_unit(double& norm) const noexcept -> std::vector<double>;

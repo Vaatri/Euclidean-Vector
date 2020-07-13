@@ -54,5 +54,7 @@ TEST_CASE("Testing constructors") {
 		auto t1 = comp6771::euclidean_vector(4, 4.2);
 		auto t2 = std::move(t1);
 		REQUIRE(fmt::format("{}", t2) == "[4.2 4.2 4.2 4.2]");
+		auto t3 = comp6771::euclidean_vector(std::move(t2));
+		REQUIRE(fmt::format("{}", t3) == "[4.2 4.2 4.2 4.2]");
 	}
 }

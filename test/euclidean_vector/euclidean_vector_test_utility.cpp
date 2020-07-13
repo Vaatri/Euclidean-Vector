@@ -15,9 +15,7 @@ TEST_CASE("Utility Functions") {
 		                    "euclidean_vector with no dimensions does not have a norm");
 		auto t1 = comp6771::euclidean_vector(3, 1);
 		CHECK(comp6771::euclidean_norm(t1) == std::sqrt(3));
-		CHECK(t1.mag_cache() == std::sqrt(3));
 		t1 *= 3;
-		CHECK(t1.mag_cache() == -1);
 		CHECK(comp6771::euclidean_norm(t1) == std::sqrt(27));
 		t1[0] = 1.5;
 		t1[1] = -3;
@@ -43,5 +41,17 @@ TEST_CASE("Utility Functions") {
 		auto c = comp6771::unit(a);
 		auto d = comp6771::unit(b);
 		REQUIRE(c == d);
+	}
+
+	SECTION("Dot product") {
+		auto expect_exception1 = comp6771::euclidean_vector();
+		auto expect_exception2 = comp6771::euclidean_vector(2);
+		REQUIRE_THROWS_WITH(comp6771::dot(expect_exception1, expect_exception2),
+		                    "Dimensions of LHS(1) and RHS(2) do not match");
+
+		auto a = comp6771::euclidean_vector{1, 2};
+		auto b = comp6771::euclidean_vector{3, 4};
+		auto c = double{comp6771::dot(a, b)};
+		REQUIRE(c == 11);
 	}
 }

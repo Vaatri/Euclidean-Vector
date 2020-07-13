@@ -35,6 +35,9 @@ TEST_CASE("Testing operator Overloading") {
 		CHECK(t5[1] == 2.3);
 		CHECK(t5[2] == 3.4);
 		CHECK(t5[3] == 4.5);
+
+		double a = {t5[3]};
+		CHECK(a == 4.5);
 	}
 
 	SECTION("Overloading += operator") {
@@ -123,10 +126,33 @@ TEST_CASE("Testing operator Overloading") {
 		CHECK(t1 != t2);
 	}
 
-	// SECTION("Overloading typecast") {
-	// 	SECTION("Vector typecast") {
-	// 		auto const a = comp6771::euclidean_vector{0.0, 1.0, 2.0};
-	// 		auto const vf = static_cast<std::vector<double>>(a);
-	// 	}
-	// }
+	SECTION("Overloading typecast") {
+		SECTION("Performing some vector operations") {
+			auto const a = comp6771::euclidean_vector{0.0, 1.0, 2.0};
+			auto const vf = static_cast<std::vector<double>>(a);
+			auto b = comp6771::euclidean_vector{0.0, 1.0, 2.0};
+			auto vf2 = static_cast<std::vector<double>>(b);
+			CHECK(vf == vf2);
+
+			vf2.emplace_back(3.0);
+			CHECK(vf2.size() == 4);
+			vf2.erase(vf2.begin());
+			CHECK(vf2.size() == 3);
+			CHECK(vf2.at(0) == 1.0);
+		}
+
+		SECTION("Performing some list operations") {
+			auto const a = comp6771::euclidean_vector{0.0, 1.0, 2.0};
+			auto const l1 = static_cast<std::vector<double>>(a);
+			auto b = comp6771::euclidean_vector{0.0, 1.0, 2.0};
+			auto l2 = static_cast<std::vector<double>>(b);
+			CHECK(l1 == l2);
+
+			l2.emplace_back(3.0);
+			CHECK(l2.size() == 4);
+			l2.erase(l2.begin());
+			CHECK(l2.size() == 3);
+			CHECK(l2.at(0) == 1.0);
+		}
+	}
 }
